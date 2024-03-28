@@ -1,5 +1,5 @@
 <div class="modal fade" id="modal-default">
- 
+
  <!-- /.edit-dialog -->
                      <div class="modal-dialog">
                      <div class="modal-content">
@@ -18,13 +18,45 @@
     <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Full name">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Speciality</label>
-    <input type="text" name="speciality" class="form-control" id="exampleInputPassword1" placeholder="Speciality">
+    <label for="dob">Date of Birth</label>
+    <input type="text" name="birth_date" class="form-control" id="dob" placeholder="Date of Birth">
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Yerars of experience </label>
-    <input type="text" name="year_exp" class="form-control" id="exampleInputPassword1" placeholder="Years of exprence">
-  </div>
+    <div class="form-group">
+        <label for="gender">Gender</label>
+        <select name="gender" class="form-control" id="gender">
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+    </div>
+{{--    <div class="form-group">--}}
+{{--        <label for="group">Group</label>--}}
+{{--        <select name="group" class="form-control" id="group">--}}
+{{--            @foreach($groupes as $groupe)--}}
+{{--                <option value="{{$groupe->id}}">{{$groupe->group}}</option>--}}
+{{--            @endforeach--}}
+{{--        </select>--}}
+{{--    </div>--}}
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email</label>
+        <input type="text" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Password</label>
+        <input type="password" name="password" class="form-control" id="exampleInputEmail1" placeholder="password">
+        <input type="checkbox" onclick="myFunction()" class="form-group">Show Password
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myInput");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+            }
+        </script>
+    </div>
 
 </div>
 <!-- /.card-body -->
@@ -40,4 +72,4 @@
                      </div>
                      <!-- /.modal-content -->
                      </div>
-                     </div>
+</div>

@@ -6,20 +6,20 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Dashboard</h1>
+            <h1 class="m-0 text-dark">Group Dashboard</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">groupes</a></li>
-              <li class="breadcrumb-item active">groupes Dashbord</li>
+              <li class="breadcrumb-item"><a href="#">group</a></li>
+              <li class="breadcrumb-item active">Group Dashboard</li>
               <button type="button" class="btn btn-block btn-info" data-toggle="modal" data-target="#modal-default">New</button>
               <div class="modal fade" id="modal-default">
- 
+
  <!-- /.edit-dialog -->
                      <div class="modal-dialog">
                      <div class="modal-content">
                          <div class="modal-header">
-                         <h4 class="modal-title">Create new groupe</h4>
+                         <h4 class="modal-title">Create new group</h4>
                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                              <span aria-hidden="true">&times;</span>
                          </button>
@@ -29,18 +29,14 @@
 
                          <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1"> name</label>
-                    <input type="text"  name="name" class="form-control" id="exampleInputEmail1" placeholder=" name">
+                    <label for="exampleInputEmail1">Group Number</label>
+                    <input type="text"  name="group" class="form-control" id="exampleInputEmail1" placeholder="group">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">level</label>
-                    <input type="text"  name="level" class="form-control" id="exampleInputPassword1" placeholder="Level">
+                     <label for="num_of_stu">Number of Students</label>
+                     <input type="number"  name="num_of_stu" class="form-control" id="num_of_stu" placeholder="num_of_stu">
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">number of students </label>
-                    <input type="text"  name="number_students" class="form-control" id="exampleInputPassword1" placeholder="Number  of students">
-                  </div>
-           
+
                 </div>
 <!-- /.card-body -->
 
@@ -72,7 +68,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with minimal features & hover style</h3>
+                <h3 class="card-title">Group</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -80,25 +76,22 @@
                 <thead>
                   <tr>
                     <th>Id</th>
-                    <th> name</th>
-                    <th> number </th>
+                    <th>Group Number</th>
                     <th>Number of students</th>
-                    <th>L Operations  </th>
+                    <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
-                @foreach($groupes as $groupe)      
+                @foreach($groupes as $groupe)
                   <tr>
                     <td>{{$groupe->id}}</td>
-                    <td>{{$groupe->name}}
-                    </td>
-                    <td>{{$groupe->level}}</td>
-                    <td> {{$groupe->number_students}}</td>
+                    <td>{{$groupe->group}}</td>
+                    <td>{{$groupe->num_of_stu}}</td>
                     <td>
                     <button type="button" class="btn btn-block btn-info" data-toggle="modal" data-target="#modal-info{{$groupe->id}}">Edit</button>
                     <button type="button" class="btn btn-block btn-danger" data-toggle="modal" data-target="#modal-danger{{$groupe->id}}">Delete</button>
                     <div class="modal fade" id="modal-info{{$groupe->id}}">
- 
+
         <!-- /.edit-dialog -->
                             <div class="modal-dialog">
                             <div class="modal-content">
@@ -113,18 +106,14 @@
 
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Full name</label>
-                    <input type="text" value="{{$groupe->name}}" name="name" class="form-control" id="exampleInputEmail1" placeholder="Full name">
+                    <label for="exampleInputEmail1">Group</label>
+                    <input type="text" value="{{$groupe->group}}" name="group" class="form-control" id="exampleInputEmail1" placeholder="Group Number">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Speciality</label>
-                    <input type="text" value="{{ $groupe->level }}" name="level" class="form-control" id="exampleInputPassword1" placeholder="Speciality">
+                        <label for="num_of_stu">Number of Students</label>
+                        <input type="number" value="{{$groupe->num_of_stu}}" name="num_of_stu" class="form-control" id="num_of_stu" placeholder="Number of students">
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">number of students </label>
-                    <input type="text" value="{{$groupe->number_students}}" name="number_students" class="form-control" id="exampleInputPassword1" placeholder="Years of exprence">
-                  </div>
-           
+
                 </div>
                 <!-- /.card-body -->
 
@@ -145,7 +134,7 @@
        <!-- /.delete-dialog -->
 
 
-          
+
                             <div class="modal fade" id="modal-danger{{$groupe->id}}">
         <div class="modal-dialog">
           <div class="modal-content bg-danger">
@@ -173,14 +162,14 @@
         <!-- /.modal-dialog -->
       </div>
 
-    
+
 
                     </td>
                   </tr>
-               
+
 
                   @endforeach
-                  
+
 </tbody>
 </table>
 
@@ -190,7 +179,7 @@
             <!-- /.card -->
           </div>
           <!-- /.col -->
-        </div>   
-                  
+        </div>
+
 
         @endsection

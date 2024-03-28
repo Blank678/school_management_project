@@ -40,11 +40,15 @@ class TeacherController extends Controller
         //
         $teacher=new teacher;
         $teacher->full_name=$request->input("name");
-        $teacher->speciality=$request->input("speciality");
-        $teacher->number_years_experience=$request->input("year_exp");
+        $teacher->birth_date=$request->input("birth_date");
+        $teacher->gender=$request->input("gender");
+//        $teacher->group_id=$request->input("group");
+        $teacher->email=$request->input("email");
+        $teacher->password=$request->input("password");
+//        $teacher->image=$request->input("image");
         $teacher->save();
         return redirect("teachers");
-    
+
     }
 
     /**
@@ -81,10 +85,13 @@ class TeacherController extends Controller
         //
         $teacher=teacher::find($teacher->id);
         $teacher->full_name=$request->input("name");
-        $teacher->speciality=$request->input("speciality");
-        $teacher->number_years_experience=$request->input("year_exp");
+        $teacher->birth_date=$request->input("birth_date");
+        $teacher->gender=$request->input("gender");
+//        $teacher->group_id=$request->input("group");
+        $teacher->email=$request->input("email");
+        $teacher->password=$request->input("password");
         $teacher->save();
-        return redirect("teachers");   
+        return redirect("teachers");
 
     }
 
@@ -99,6 +106,6 @@ class TeacherController extends Controller
         //
         $teacher=teacher::find($teacher->id);
         $teacher->delete();
-        return redirect("teachers");   
+        return redirect("teachers");
      }
 }

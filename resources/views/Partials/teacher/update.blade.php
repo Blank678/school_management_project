@@ -1,5 +1,5 @@
 <div class="modal fade" id="modal-info{{$teacher->id}}">
- 
+
  <!-- /.edit-dialog -->
                      <div class="modal-dialog">
                      <div class="modal-content">
@@ -18,14 +18,28 @@
              <input type="text" value="{{$teacher->full_name}}" name="name" class="form-control" id="exampleInputEmail1" placeholder="Full name">
            </div>
            <div class="form-group">
-             <label for="exampleInputPassword1">Speciality</label>
-             <input type="text" value="{{ $teacher->speciality }}" name="speciality" class="form-control" id="exampleInputPassword1" placeholder="Speciality">
+             <label for="dob">Date of Birth</label>
+             <input type="text" value="{{ $teacher->birth_date }}" name="birth_date" class="form-control" id="dob" placeholder="Date of Birth">
            </div>
-           <div class="form-group">
-             <label for="exampleInputPassword1">Yerars of experience </label>
-             <input type="text" value="{{$teacher->number_years_experience}}" name="year_exp" class="form-control" id="exampleInputPassword1" placeholder="Years of exprence">
-           </div>
-    
+
+             <div class="form-group">
+                 <label for="gender">Gender</label>
+                 <select name="gender" class="form-control" id="gender">
+                     <option value="">Select Gender</option>
+                     <option value="male">Male</option>
+                     <option value="female">Female</option>
+                 </select>
+             </div>
+             <div class="form-group">
+                 <label for="email">Email</label>
+                 <input type="text" value="{{ $teacher->email }}" name="email" class="form-control" id="email" placeholder="Email">
+             </div>
+             <div class="form-group">
+                 <label for="dob">Password</label>
+                 <input type="password" value="{{ $teacher->password }}" name="password" class="form-control" id="password" placeholder="password">
+             </div>
+
+
          </div>
          <!-- /.card-body -->
 
