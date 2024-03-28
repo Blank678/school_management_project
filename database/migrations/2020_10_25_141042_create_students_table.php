@@ -16,9 +16,12 @@ class CreateStudentsTable extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->string("full_name");
-            $table->string("age");
-            $table->unsignedBigInteger('groupe');
-            $table->foreign('groupe')->references('id')->on('groupes')->onDelete('cascade');
+            $table->string("birth_date");
+            $table->string("gender");
+            $table->unsignedBigInteger('group_id'); // Foreign key column
+            $table->foreign('group_id')->references('id')->on('groupes')->onDelete('cascade');
+            $table->string("email");
+            $table->string("password");
 
             $table->timestamps();
         });

@@ -40,11 +40,14 @@ class StudentController extends Controller
         //
         $student=new student;
         $student->full_name=$request->input("full_name");
-        $student->age=$request->input("age");
-        $student->groupe=$request->input("groupe");
+        $student->birth_date=$request->input("birth_date");
+        $student->gender=$request->input("gender");
+        $student->group_id=$request->input("group");
+        $student->email=$request->input("email");
+        $student->password=$request->input("password");
         $student->save();
         return redirect("students");
-    
+
     }
 
     /**
@@ -81,10 +84,13 @@ class StudentController extends Controller
         //
         $student=student::find($student->id);
         $student->full_name=$request->input("full_name");
-        $student->age=$request->input("age");
-        $student->groupe=$request->input("groupe");
+        $student->birth_date=$request->input("birth_date");
+        $student->gender=$request->input("gender");
+        $student->group_id=$request->input("group");
+        $student->email=$request->input("email");
+        $student->password=$request->input("password");
         $student->save();
-        return redirect("students");   
+        return redirect("students");
     }
 
     /**
@@ -98,6 +104,6 @@ class StudentController extends Controller
         //
         $student=student::find($student->id);
         $student->delete();
-        return redirect("students");   
+        return redirect("students");
     }
 }

@@ -39,9 +39,8 @@ class GroupeController extends Controller
     {
         //
         $groupe=new groupe;
-        $groupe->name=$request->input("name");
-        $groupe->level=$request->input("level");
-        $groupe->number_students=$request->input("number_students");
+        $groupe->group=$request->input("group");
+        $groupe->num_of_stu=$request->input("num_of_stu");
         $groupe->save();
         return redirect("groupes");
     }
@@ -66,7 +65,7 @@ class GroupeController extends Controller
     public function edit(groupe $groupe)
     {
         //
-    
+
     }
 
     /**
@@ -80,9 +79,8 @@ class GroupeController extends Controller
     {
         //
         $groupe=groupe::find($groupe->id);
-        $groupe->name=$request->input("name");
-        $groupe->level=$request->input("level");
-        $groupe->number_students=$request->input("number_students");
+        $groupe->group=$request->input("group");
+        $groupe->num_of_stu=$request->input("num_of_stu");
         $groupe->save();
         return redirect("groupes");
     }
@@ -98,6 +96,6 @@ class GroupeController extends Controller
         //
         $groupe=groupe::find($groupe->id);
         $groupe->delete();
-        return redirect("groupes"); 
+        return redirect("groupes");
     }
 }
